@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkway Insurance | Brokerage Corporation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #003d99;
+            --secondary: #0052cc;
+            --accent: #0066ff;
+            --white: #ffffff;
+            --dark: #0f1729;
+            --gray: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray);
+            padding: 1rem 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: transform 0.3s;
+            cursor: pointer;
+            border: none;
+            margin: 0 0.5rem;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .services {
+            padding: 3rem 0;
+            background: #f8fafc;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+        .contact {
+            padding: 3rem 2rem;
+            background: #f8fafc;
+        }
+        .contact h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        .contact-card a:hover {
+            color: var(--secondary);
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--gray);
+            border-radius: 0.5rem;
+            font-family: inherit;
+        }
+        form button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background: var(--secondary);
+        }
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Parkway Insurance</div>
+            <nav style="display: flex;">
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Your Protection is Our Priority</h1>
+            <p>Expert insurance brokerage services in New York</p>
+            <button class="btn">Get Free Quote</button>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Auto Insurance</h3>
+                    <p>Comprehensive coverage for your vehicles with competitive rates.</p>
+                </div>
+                <div class="card">
+                    <h3>Home Insurance</h3>
+                    <p>Protect your home with customizable homeowners insurance plans.</p>
+                </div>
+                <div class="card">
+                    <h3>Business Insurance</h3>
+                    <p>Safeguard your business with liability and property coverage.</p>
+                </div>
+                <div class="card">
+                    <h3>Flood Insurance</h3>
+                    <p>Protection against flood damage that standard policies don't cover.</p>
+                </div>
+                <div class="card">
+                    <h3>Umbrella Liability</h3>
+                    <p>Extra protection beyond standard policies for complete peace of mind.</p>
+                </div>
+                <div class="card">
+                    <h3>Specialized Coverage</h3>
+                    <p>Custom solutions for unique insurance needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Call Us</h3>
+                    <a href="tel:+17182596430">(718) 259-6430</a>
+                    <p>Mon-Fri: 9am-6pm EST</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Email Us</h3>
+                    <a href="mailto:info@parkwaybrokerage.com">info@parkwaybrokerage.com</a>
+                    <p>Response within 24 hours</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Visit Us</h3>
+                    <p>New York Office</p>
+                    <p>By appointment available</p>
+                </div>
+            </div>
+            
+            <form onsubmit="alert('Thank you! We will contact you soon.'); return false;">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <textarea rows="5" placeholder="Tell us about your insurance needs..."></textarea>
+                <button type="submit">Get Your Free Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Parkway Insurance Brokerage. All rights reserved.</p>
+    </footer>
+</body>
+</html>
